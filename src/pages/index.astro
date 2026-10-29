@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import HomeSections from '../components/HomeSections.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import interFont from '../assets/fonts/inter-latin.woff2?url';
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ import '../styles/global.css';
     <title>SJIMNZ Construction | Residential Remodeling</title>
     <meta name="description" content="From kitchens and bathrooms to the finishing details, SJIMNZ Construction helps turn the home you have into the home you need." />
     <link rel="icon" type="image/svg+xml" href={`${base}images/construction-mark.svg`} />
-    <link rel="preload" href={`${base}fonts/inter-latin.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interFont} as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
