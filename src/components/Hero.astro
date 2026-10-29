@@ -1,0 +1,27 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-intro">
+    <p class="eyebrow">Residential remodeling &amp; construction</p>
+    <h1 id="hero-title">A better home.<br />Built around you.</h1>
+    <div class="hero-details">
+      <p class="hero-description">From kitchens and bathrooms to the finishing details, SJIMNZ Construction helps turn the home you have into the home you need.</p>
+      <a class="button" href={`${base}contact/`}>
+        Get a free estimate
+        <img src={`${base}images/arrow.svg`} alt="" width="19.2803" height="19.2803" />
+      </a>
+      <p class="hero-note eyebrow">Free estimates / Inspection visits</p>
+    </div>
+  </div>
+  <figure class="hero-media">
+    <picture>
+      <img src={`${base}images/hero-kitchen.png`} alt="Kitchen with wood cabinetry and a central island" fetchpriority="high" width="1440" height="872" />
+    </picture>
+    <figcaption class="eyebrow">
+      <span>Conceptual image</span>
+      <span>Design exploration</span>
+    </figcaption>
+  </figure>
+</section>

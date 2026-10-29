@@ -1,0 +1,50 @@
+---
+const base = import.meta.env.BASE_URL;
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Contact Us', href: '/contact/' },
+];
+---
+
+<header class="site-header">
+  <div class="navbar">
+    <a class="brand" href={`${base}`} aria-label="SJimnz Construction home">
+      <picture>
+        <source media="(max-width: 767px)" srcset={`${base}images/construction-mark-mobile.svg`} />
+        <img src={`${base}images/construction-mark.svg`} alt="" width="36" height="38" />
+      </picture>
+      <span class="wordmark">
+        <span class="brand-name">SJimnz</span>
+        <span class="brand-descriptor">CONSTRUCTION LLC</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {links.map(({ label, href }) => (
+        <a href={base + href.slice(1)} aria-current={href === '/' ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+
+    <a class="desktop-phone" href="tel:+12158003372">
+      <span class="eyebrow">Start with a conversation</span>
+      <span>+1 (215) 800-3372</span>
+    </a>
+
+    <details class="mobile-menu">
+      <summary aria-label="Main menu">
+        <img src={`${base}images/menu.svg`} alt="" width="22" height="15.5" />
+      </summary>
+      <nav aria-label="Mobile navigation">
+        {links.map(({ label, href }) => (
+          <a href={base + href.slice(1)} aria-current={href === '/' ? 'page' : undefined}>{label}</a>
+        ))}
+        <a class="mobile-phone" href="tel:+12158003372">
+          <span>Let’s talk about your home</span>
+          <span>+1 (215) 800-3372</span>
+        </a>
+      </nav>
+    </details>
+  </div>
+</header>
