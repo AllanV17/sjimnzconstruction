@@ -56,7 +56,8 @@ a:focus-visible, summary:focus-visible {
 .wordmark { display: flex; flex-direction: column; gap: 1px; }
 .brand-name { font-size: 26px; font-weight: 700; }
 .brand-descriptor { font: 9px 'IBM Plex Mono', monospace; opacity: .78; }
-.desktop-nav { display: flex; gap: 32px; font-size: 13px; }
+.desktop-nav { display: flex; gap: 32px; font-size: 16px; font-weight: 500; }
+.desktop-nav a:hover, .desktop-nav a[aria-current='page'] { font-weight: 500; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 8px; }
 nav a { display: inline-flex; align-items: center; min-height: 44px; }
 nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 nav a[aria-current='page'] { font-weight: 600; }
@@ -142,6 +143,7 @@ h1 { font-size: clamp(60px, 5.556vw, 92px); font-weight: 600; line-height: 1.05;
 .text-link { display: inline-flex; justify-content: space-between; align-items: center; gap: 32px; min-height: 44px; margin-top: 24px; padding-bottom: 4px; border-bottom: 1px solid currentColor; color: var(--accent); font-size: 14px; font-weight: 500; }
 .text-link span { font-size: 22px; font-weight: 400; }
 .text-link:hover { color: #79351f; }
+.about-section { padding-bottom: 72px; }
 .about-layout { display: grid; grid-template-columns: 1.25fr 1fr; gap: 96px; align-items: center; max-width: 1180px; margin-inline: auto; }
 .about-copy .section-copy { max-width: 440px; margin-top: 28px; }
 .about-section h2 { font-size: clamp(36px, 3.4vw, 49px); }
@@ -150,9 +152,9 @@ h1 { font-size: clamp(60px, 5.556vw, 92px); font-weight: 600; line-height: 1.05;
 .person-name { margin: 48px 0 36px; font-size: clamp(46px, 4.5vw, 65px); font-weight: 500; line-height: 1.02; letter-spacing: -.045em; }
 .person-name span { color: var(--accent); }
 .company-person .person-role { color: var(--accent); }
-.work-section { padding-top: 16px; }
-.work-section .section-heading { align-items: start; }
-.work-section h2 { max-width: 630px; font-size: clamp(44px, 5vw, 72px); }
+.work-section { padding-top: 64px; padding-bottom: 96px; }
+.work-section .section-heading { align-items: end; max-width: 1180px; margin-inline: auto; }
+.work-section h2 { max-width: 630px; font-size: clamp(40px, 4.445vw, 64px); }
 .work-gallery { display: grid; grid-template-columns: minmax(0, 768px) minmax(0, 380px); gap: 32px; max-width: 1180px; margin-inline: auto; }
 .work-gallery figure { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .work-gallery img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }

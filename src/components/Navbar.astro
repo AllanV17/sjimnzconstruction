@@ -1,10 +1,11 @@
 ---
 const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
 const links = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Contact Us', href: '/contact/' },
+  { label: 'Home', href: base },
+  { label: 'About', href: `${base}about/` },
+  { label: 'Services', href: `${base}services/` },
+  { label: 'Contact Us', href: `${base}contact/` },
 ];
 ---
 
@@ -23,7 +24,7 @@ const links = [
 
     <nav class="desktop-nav" aria-label="Main navigation">
       {links.map(({ label, href }) => (
-        <a href={base + href.slice(1)} aria-current={href === '/' ? 'page' : undefined}>{label}</a>
+        <a href={href} aria-current={currentPath === href.replace(/\/$/, '') ? 'page' : undefined}>{label}</a>
       ))}
     </nav>
 
@@ -38,7 +39,7 @@ const links = [
       </summary>
       <nav aria-label="Mobile navigation">
         {links.map(({ label, href }) => (
-          <a href={base + href.slice(1)} aria-current={href === '/' ? 'page' : undefined}>{label}</a>
+          <a href={href} aria-current={currentPath === href.replace(/\/$/, '') ? 'page' : undefined}>{label}</a>
         ))}
         <a class="mobile-phone" href="tel:+12158003372">
           <span>Let’s talk about your home</span>

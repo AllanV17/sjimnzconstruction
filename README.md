@@ -47,6 +47,7 @@ The new Home sections use photographs from the company's existing website, downl
 - `projects/bathroom.jpeg`: [bathrooms-1.jpeg](https://www.sjimnzconstruction.com/wp-content/uploads/2019/06/bathrooms-1.jpeg).
 - `projects/drywall.jpeg`: [drywall-sjmnzconstruction.jpeg](https://www.sjimnzconstruction.com/wp-content/uploads/2019/05/drywall-sjmnzconstruction.jpeg).
 - `projects/staircase.jpg`: [staircase-Sjimnzconstruction.jpg](https://www.sjimnzconstruction.com/wp-content/uploads/2019/06/staircase-Sjimnzconstruction.jpg).
+- `projects/interior-wood-ceiling.webp`: P38, [new-project1.jpeg](https://www.sjimnzconstruction.com/wp-content/uploads/2019/11/new-project1.jpeg), reused from the approved processed desktop image in `output/photo-preparation/processed/`. The 768 × 845 WebP is copied unchanged; the original remains in `output/photo-inventory/original-site/`.
 
 Sergio J. Jimenez's CEO / Manager title is published on the [existing About page](https://www.sjimnzconstruction.com/about/). The phone, email, address and license number PA147397 are published on the [existing Home page](https://www.sjimnzconstruction.com/). The license number is reproduced as published, without asserting its current registration status. No project locations, dates, testimonials or additional credentials have been added.
 
