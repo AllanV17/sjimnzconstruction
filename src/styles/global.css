@@ -75,8 +75,9 @@ h1 { font-size: clamp(60px, 5.556vw, 92px); font-weight: 600; line-height: 1.05;
 .hero-note { opacity: .78; }
 .hero-media { position: absolute; inset: -112px 0 0; }
 .hero-media picture, .hero-media picture img { width: 100%; height: 100%; }
-.hero-media picture img { object-fit: cover; }
-.hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(14 17 14 / 88%), rgb(14 17 14 / 64%) 50%, rgb(14 17 14 / 18%)); }
+.hero-media picture img { object-fit: cover; object-position: center; }
+/* Protect the header without stacking its shading over the photo gradient. */
+.hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(14 17 14 / 70%), rgb(14 17 14 / 52%)) top / 100% 112px no-repeat, linear-gradient(90deg, rgb(14 17 14 / 72%), rgb(14 17 14 / 68%) 20%, rgb(14 17 14 / 42%) 32%, rgb(14 17 14 / 10%) 60%, transparent 80%) bottom / 100% calc(100% - 112px) no-repeat; }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .desktop-nav { gap: 18px; }
@@ -103,17 +104,19 @@ h1 { font-size: clamp(60px, 5.556vw, 92px); font-weight: 600; line-height: 1.05;
   .mobile-menu nav a { min-height: 48px; font-size: 16px; }
   .mobile-menu nav .mobile-phone { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 8px; padding-block: 16px; border-top: 1px solid #cdcec3; }
   .mobile-phone span:first-child { font-size: 12px; color: var(--muted); }
-  .hero { position: relative; min-height: calc(100svh - 72px); color: var(--ivory); }
-  .hero-media { inset: 0; }
-  .hero-intro { padding: 48px var(--gutter) 100px; }
+  .hero { min-height: 0; background: #252923; color: var(--ivory); }
+  .hero-media { inset: 0 0 auto; height: clamp(360px, 110vw, 460px); }
+  .hero-intro { padding: clamp(280px, 82vw, 360px) var(--gutter) 48px; }
   .hero-intro > .eyebrow { margin-bottom: 20px; }
-  h1 { font-size: clamp(36px, 11.28vw, 56px); line-height: 1.06; margin-bottom: 20px; }
+  .hero-intro > .eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; margin-right: 8px; background: var(--accent); vertical-align: middle; }
+  .hero h1 { font-size: clamp(32px, 9.23vw, 40px); line-height: 1.06; margin-bottom: 20px; }
   .hero-details { max-width: none; align-items: stretch; gap: 24px; }
+  .hero .button { justify-content: space-between; }
   .hero-description { font-size: 16px; color: rgb(249 247 241 / 90%); }
   .hero-note { opacity: .9; }
-  .hero-media picture { display: block; }
+  .hero-media picture { display: block; overflow: hidden; }
   .hero-media picture img { object-position: 60% center; }
-  .hero-media::after { background: linear-gradient(rgb(14 17 14 / 88%), rgb(14 17 14 / 72%) 55%, rgb(14 17 14 / 35%)); }
+  .hero-media::after { background: linear-gradient(180deg, transparent 48%, rgb(37 41 35 / 15%) 60%, rgb(37 41 35 / 84%) 80%, #252923); }
 }
 
 .home-content { color: #252923; background: #f1f0e9; }
@@ -157,11 +160,14 @@ h1 { font-size: clamp(60px, 5.556vw, 92px); font-weight: 600; line-height: 1.05;
 .work-gallery .work-primary img { flex: 1; min-height: 0; height: 0; aspect-ratio: auto; }
 .work-bathroom img { object-position: center bottom; }
 .work-gallery figcaption { display: flex; align-items: center; min-height: 24px; color: var(--muted); font: 11px/1.5 'IBM Plex Mono', monospace; text-transform: uppercase; }
-.final-cta { padding-block: 104px; background: #252923; color: #f1f0e9; }
-.final-cta .section-label { color: #d5a38e; margin-bottom: 40px; }
+.final-cta { padding-block: 104px; background: #8f3f2b; color: #f1f0e9; }
+.final-cta .section-label { color: inherit; margin-bottom: 40px; }
 .cta-layout { display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 80px; }
 .final-cta h2 { font-size: clamp(40px, 4.6vw, 66px); }
-.final-cta .section-copy { max-width: 400px; color: #c4c7ba; }
+.final-cta .section-copy { max-width: 400px; color: inherit; }
+.final-cta .button { background: #f1f0e9; color: #252923; }
+.final-cta .button:hover { background: #e5e5dc; }
+.final-cta .button:focus-visible { outline-color: #f1f0e9; }
 .contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 28px; }
 .contact-phone { display: inline-flex; align-items: center; min-height: 44px; color: #f1f0e9; font-size: 18px; }
 .contact-phone:hover { text-decoration: underline; text-underline-offset: 6px; }
